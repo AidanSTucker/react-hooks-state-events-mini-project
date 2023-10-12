@@ -5,8 +5,6 @@ import NewTaskForm from "./NewTaskForm";
 import TaskList from "./TaskList";
 
 import { CATEGORIES, TASKS } from "../data";
-console.log("Here's the data you're working with");
-console.log({ CATEGORIES, TASKS });
 
 class App extends Component {
   constructor(props) {
@@ -46,10 +44,7 @@ class App extends Component {
           selectedCategory={selectedCategory}
           onSelectCategory={this.handleCategorySelect}
         />
-        <NewTaskForm
-          categories={CATEGORIES}
-          onTaskFormSubmit={this.handleTaskAdd}
-        />
+        <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={this.handleTaskAdd} />
         <TaskList
           tasks={tasks}
           selectedCategory={selectedCategory}

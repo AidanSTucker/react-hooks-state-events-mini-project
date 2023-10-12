@@ -1,5 +1,5 @@
 // NewTaskForm.js
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 class NewTaskForm extends Component {
   constructor(props) {
@@ -48,7 +48,8 @@ class NewTaskForm extends Component {
         <label>
           Category
           <select name="category" value={category} onChange={this.handleChange}>
-            {categories.map((cat) => (
+            {categories.filter((cat) => cat !== "All")
+            .map((cat) => (
               <option key={cat} value={cat}>
                 {cat}
               </option>
